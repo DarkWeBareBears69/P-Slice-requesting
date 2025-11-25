@@ -230,11 +230,6 @@
 	<haxelib name="extension-androidtools" if="android" />
 	<section if="FIREBASE_CRASH_HANDLER">
 		<haxelib name="extension-firebase-crashlytics" />
-		<config:android pslice-firebase-sdk-path="yes" />
-		<template path="art/google-services.json" rename="google-services.json" if="android"/>
-		<template path="art/GoogleService-Info.plist" rename="GoogleService-Info.plist" if="ios"/>
-		<template path="art/GoogleService-Info.plist" rename="../GoogleService-Info.plist" if="ios"/>
-		<define name="NO_FIREBASE_ANDROID_PATCHES" />
 	</section>
 	<haxelib name="tjson" version="1.4.0" />
 	<haxelib name="grig.audio" />
@@ -373,6 +368,10 @@
 
 	<section if="FIREBASE_CRASH_HANDLER">
 		<template path="setup/google-services.json" rename="app/google-services.json"/>
+		<config:android pslice-firebase-sdk-path="yes" />
+		<template path="setup/GoogleService-Info.plist" rename="GoogleService-Info.plist" if="ios"/>
+		<template path="setup/GoogleService-Info.plist" rename="../GoogleService-Info.plist" if="ios"/>
+		<define name="NO_FIREBASE_ANDROID_PATCHES" />
 	</section>
 
 	<section if="PROFILE_BUILD">
