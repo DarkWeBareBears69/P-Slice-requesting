@@ -99,8 +99,8 @@ jobs:
         run: sh ./setup/firebase_spell.sh
 
       - name: Upload debugging symbols (iOS)
-        if: inputs.exportPath == 'android' 
-        run: sh ./setup/firebase_spell.sh
+        if: inputs.name == 'iOS'
+        run: sh ./setup/firebase_ios.sh
 
       - name: Sign APK with the proper key
         if: inputs.exportPath == 'android'
