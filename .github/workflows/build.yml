@@ -88,6 +88,8 @@ jobs:
 
       - name: Configure iOS
         if: inputs.name == 'iOS'
+        env:
+          PLAYSTORE_FIREBASE_IOS: ${{ secrets.PLAYSTORE_FIREBASE_IOS }}
         run: printf '%s' "$PLAYSTORE_FIREBASE_IOS" > ./setup/GoogleService-Info.plist
 
       - name: Compile
